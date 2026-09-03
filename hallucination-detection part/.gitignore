@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+data/*.json
+cached_scores.json
+failure_cases.json
+.DS_Store
+**/.DS_Store
