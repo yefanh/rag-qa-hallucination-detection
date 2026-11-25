@@ -1,0 +1,198 @@
+{
+  "n_samples": 2000,
+  "n_records": 1000,
+  "n_calibration_samples": 1000,
+  "n_test_samples": 1000,
+  "share_premise_truncated_in_concat_mode": 0.0335,
+  "halueval_reference": {
+    "accuracy": 0.77,
+    "roc_auc": 0.794
+  },
+  "modes": {
+    "concat": {
+      "roc_auc_1_minus_entailment": 0.7973,
+      "pr_auc_1_minus_entailment": 0.7804,
+      "roc_auc_contradiction": 0.7603,
+      "test_halueval_fusion_rule": {
+        "n": 1000,
+        "accuracy": 0.732,
+        "accuracy_95ci": [
+          0.704,
+          0.759
+        ],
+        "precision": 0.7685,
+        "recall": 0.664,
+        "f1": 0.7124
+      },
+      "test_rag_threshold_0.48": {
+        "n": 1000,
+        "accuracy": 0.734,
+        "accuracy_95ci": [
+          0.706,
+          0.76
+        ],
+        "precision": 0.7407,
+        "recall": 0.72,
+        "f1": 0.7302
+      },
+      "recalibrated_entail_threshold": 0.55,
+      "test_recalibrated": {
+        "n": 1000,
+        "accuracy": 0.74,
+        "accuracy_95ci": [
+          0.712,
+          0.766
+        ],
+        "precision": 0.7372,
+        "recall": 0.746,
+        "f1": 0.7416
+      },
+      "mcnemar_recalibrated_vs_halueval_rule": {
+        "a_only_correct": 41,
+        "b_only_correct": 33,
+        "p_value": 0.416
+      },
+      "mcnemar_recalibrated_vs_rag_0.48": {
+        "a_only_correct": 13,
+        "b_only_correct": 7,
+        "p_value": 0.263
+      },
+      "test_by_difficulty": {
+        "easy": {
+          "n": 270,
+          "roc_auc": 0.8514,
+          "hallucination_recall": 0.8
+        },
+        "hard": {
+          "n": 410,
+          "roc_auc": 0.7531,
+          "hallucination_recall": 0.6927
+        },
+        "medium": {
+          "n": 320,
+          "roc_auc": 0.8246,
+          "hallucination_recall": 0.7688
+        }
+      },
+      "test_hallucination_recall_by_category": {
+        "Misinterpretation of #Question#": {
+          "n": 370,
+          "recall": 0.7568
+        },
+        "Incomplete Information": {
+          "n": 107,
+          "recall": 0.6916
+        },
+        "Mechanism and Pathway Misattribution": {
+          "n": 21,
+          "recall": 0.8095
+        },
+        "Methodological and Evidence Fabrication": {
+          "n": 2,
+          "recall": 1.0
+        }
+      }
+    },
+    "per_chunk": {
+      "roc_auc_1_minus_entailment": 0.7055,
+      "pr_auc_1_minus_entailment": 0.6764,
+      "roc_auc_contradiction": 0.6281,
+      "test_halueval_fusion_rule": {
+        "n": 1000,
+        "accuracy": 0.642,
+        "accuracy_95ci": [
+          0.612,
+          0.671
+        ],
+        "precision": 0.6228,
+        "recall": 0.72,
+        "f1": 0.6679
+      },
+      "test_rag_threshold_0.48": {
+        "n": 1000,
+        "accuracy": 0.644,
+        "accuracy_95ci": [
+          0.614,
+          0.673
+        ],
+        "precision": 0.6088,
+        "recall": 0.806,
+        "f1": 0.6936
+      },
+      "recalibrated_entail_threshold": 0.09,
+      "test_recalibrated": {
+        "n": 1000,
+        "accuracy": 0.638,
+        "accuracy_95ci": [
+          0.608,
+          0.667
+        ],
+        "precision": 0.6561,
+        "recall": 0.58,
+        "f1": 0.6157
+      },
+      "mcnemar_recalibrated_vs_halueval_rule": {
+        "a_only_correct": 66,
+        "b_only_correct": 70,
+        "p_value": 0.797
+      },
+      "mcnemar_recalibrated_vs_rag_0.48": {
+        "a_only_correct": 107,
+        "b_only_correct": 113,
+        "p_value": 0.736
+      },
+      "test_by_difficulty": {
+        "easy": {
+          "n": 270,
+          "roc_auc": 0.7562,
+          "hallucination_recall": 0.7259
+        },
+        "hard": {
+          "n": 410,
+          "roc_auc": 0.6386,
+          "hallucination_recall": 0.5268
+        },
+        "medium": {
+          "n": 320,
+          "roc_auc": 0.7188,
+          "hallucination_recall": 0.525
+        }
+      },
+      "test_hallucination_recall_by_category": {
+        "Misinterpretation of #Question#": {
+          "n": 370,
+          "recall": 0.6
+        },
+        "Incomplete Information": {
+          "n": 107,
+          "recall": 0.5421
+        },
+        "Mechanism and Pathway Misattribution": {
+          "n": 21,
+          "recall": 0.4286
+        },
+        "Methodological and Evidence Fabrication": {
+          "n": 2,
+          "recall": 0.5
+        }
+      }
+    }
+  },
+  "length_baseline": {
+    "mean_words_ground_truth": 39.7,
+    "mean_words_hallucinated": 27.8,
+    "roc_auc_shorter_is_hallucinated": 0.7396,
+    "note": "AUC far from 0.5 means answer length alone separates the classes (a benchmark shortcut)."
+  },
+  "beyond_length_concat": {
+    "cv_roc_auc": {
+      "length_only": 0.7379,
+      "nli_only": 0.7852,
+      "length_plus_nli": 0.8224
+    },
+    "pairwise_win_rate_all": 0.814,
+    "pairwise_win_rate_when_hallucination_not_shorter": 0.7639,
+    "n_records_hallucination_not_shorter": 216,
+    "pairwise_win_rate_when_hallucination_shorter": 0.8278
+  }
+}

@@ -21,6 +21,12 @@ compared on hundreds of questions instead of the twenty a human can label.
 
 Full write-up: [`CS6120 Final Report.pdf`](CS6120%20Final%20Report.pdf)
 
+**Extension: biomedical QA.** The detector was also evaluated on 2,000
+PubMedQA-derived MedHallu samples. Its ROC-AUC (0.797) matches HaluEval, and the
+benchmark thresholds transfer without significant loss. The analysis also
+controls for an answer-length shortcut in that benchmark. See
+[`hallucination-detection part/medical_extension/`](hallucination-detection%20part/medical_extension).
+
 ## Method
 
 Detection is framed as Natural Language Inference. The retrieved knowledge is the

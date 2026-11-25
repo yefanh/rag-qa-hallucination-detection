@@ -5,3 +5,5 @@ cached_scores.json
 failure_cases.json
 .DS_Store
 **/.DS_Store
+# MedHallu raw data is downloaded by medical_extension/fetch_medhallu.py, not redistributed
+medical_extension/data/medhallu_pqa_labeled.jsonl
